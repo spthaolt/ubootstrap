@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{10C6C8F0-015E-43FF-A74E-12624A63E17B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Bootstrap.Installer</RootNamespace>
+    <AssemblyName>Bootstrap.Installer</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="businesslogic">
+      <HintPath>..\..\Lib\Umbraco\businesslogic.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="cms">
+      <HintPath>..\..\Lib\Umbraco\cms.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Combres">
+      <HintPath>..\..\Lib\Combres\Combres.dll</HintPath>
+    </Reference>
+    <Reference Include="controls">
+      <HintPath>..\..\Lib\Umbraco\controls.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="dotless.Core">
+      <HintPath>..\..\Lib\Combres\dotless.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="EcmaScript.NET.modified">
+      <HintPath>..\..\Lib\Combres\EcmaScript.NET.modified.dll</HintPath>
+    </Reference>
+    <Reference Include="Examine">
+      <HintPath>..\..\Lib\Umbraco\Examine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Fasterflect">
+      <HintPath>..\..\Lib\Combres\Fasterflect.dll</HintPath>
+    </Reference>
+    <Reference Include="interfaces">
+      <HintPath>..\..\Lib\Umbraco\interfaces.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\Lib\Newtonsoft\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PackageActionsContrib">
+      <HintPath>..\..\Lib\PackageActionsContrib\PackageActionsContrib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="umbraco">
+      <HintPath>..\..\Lib\Umbraco\umbraco.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="umbraco.DataLayer">
+      <HintPath>..\..\Lib\Umbraco\umbraco.DataLayer.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Yahoo.Yui.Compressor">
+      <HintPath>..\..\Lib\Combres\Yahoo.Yui.Compressor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Actions\AddCombresSection.cs" />
+    <Compile Include="Actions\AddExamineIndex.cs" />
+    <Compile Include="Actions\AddExamineIndexProvider.cs" />
+    <Compile Include="Actions\AddExamineSearchProvider.cs" />
+    <Compile Include="Actions\AddMediaItems.cs" />
+    <Compile Include="Actions\RebuildIndex.cs" />
+    <Compile Include="Actions\UpdateRoot.cs" />
+    <Compile Include="UserControls\Installer.ascx.cs">
+      <DependentUpon>Installer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Installer.ascx.designer.cs">
+      <DependentUpon>Installer.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\SerializationHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="UserControls\Installer.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Logic\Logic.csproj">
+      <Project>{A008E7F5-686C-4B78-9B01-44F181B8CC93}</Project>
+      <Name>Logic</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

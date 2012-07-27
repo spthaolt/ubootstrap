@@ -1,0 +1,20 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/masterpages/Public.master" AutoEventWireup="true" %>
+<%@ Import Namespace="System.Threading" %>
+
+<asp:content ContentPlaceHolderId="HeaderContent" runat="server">
+    <h2><umbraco:Item field="headerText" stripParagraph="true" runat="server" /></h2>
+</asp:content>
+<asp:content ContentPlaceHolderId="MainContent" runat="server">
+    <umbraco:Macro Alias="DisplayImage" ImageWidth="250" MediaId="[#bodyImage]" ImageClass="rounded" FloatImage="true" runat="server" />
+    <umbraco:Item field="bodyText" runat="server" />
+    <script>
+        var GOOG_FIXURL_LANG = '<%= Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName %>';
+        var GOOG_FIXURL_SITE = location.host;
+    </script>
+    <script src="http://linkhelp.clients.google.com/tbproxy/lh/wm/fixurl.js"></script>
+</asp:content>
+<asp:content ContentPlaceHolderID="SideContent" runat="server">
+    <umbraco:Macro Alias="SideNavigation" runat="server" />
+    <umbraco:Macro Alias="GetInTouch" runat="server" />
+</asp:content>
+

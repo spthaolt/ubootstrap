@@ -1,3 +1,14 @@
+# Umbraco
+src/WebApp/App_Browsers/
+src/WebApp/App_Code/
+src/WebApp/App_Data/
+src/WebApp/aspnet_client/
+src/WebApp/media/created-packages/
+src/WebApp/media/*/Cached/
+src/WebApp/umbraco/
+src/WebApp/umbraco_client/
+
+# Visual Studio
 [Oo]bj
 [Bb]in
 *.user

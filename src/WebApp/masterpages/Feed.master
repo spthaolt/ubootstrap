@@ -1,0 +1,2 @@
+﻿<%@ Master Language="C#" %>
+<umbraco:Macro FeedItems="10" FeedTitle="[#feedTitle]" FeedDescription="[#feedDescription]" Alias="NewsFeed" runat="server" />

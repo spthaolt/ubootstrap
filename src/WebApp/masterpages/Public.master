@@ -1,0 +1,58 @@
+﻿<%@ Master Language="C#" Inherits="Bootstrap.Logic.UI.MasterPageBase" %>
+<%@ Import Namespace="System.Threading" %><!doctype html>
+<html lang="<%= Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName %>">
+<head>
+    <meta charset="utf-8" />
+    <title><umbraco:Macro Alias="PageTitle" runat="server" /></title>
+    <umbraco:Macro Alias="HeaderTags" runat="server" />
+    <%= Thread.CurrentThread.CurrentUICulture.TextInfo.IsRightToLeft ? Combres.WebExtensions.CombresLink("rtlCss") : Combres.WebExtensions.CombresLink("theme")%>
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body <%= Thread.CurrentThread.CurrentUICulture.TextInfo.IsRightToLeft ? "dir=\"rtl\"" : "" %>>
+    <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <header class="container" role="banner">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="/"><umbraco:Item field="siteName" recursive="true" runat="server" /></a>
+        <nav role="navigation" class="nav-collapse">
+            <umbraco:Macro Alias="Navigation" runat="server" />
+            <umbraco:Macro Alias="SearchBox" runat="server" />
+        </nav>
+        </header>
+    </div>
+    </div>
+    
+    <div class="container">
+        <div class="hero-unit">
+            <asp:ContentPlaceHolder Id="HeaderContent" runat="server" />
+        </div>
+        <div class="row">
+        <section class="span9" role="main">
+            <asp:ContentPlaceHolder Id="MainContent" runat="server" />
+        </section>
+        <aside class="span3" role="complementary">
+            <asp:ContentPlaceHolder Id="SideContent" runat="server" />
+        </aside>
+        </div>
+        <footer class="row" role="contentinfo">
+            <div class="span4">
+                <umbraco:Macro Alias="RelatedLinks" runat="server" />
+            </div>
+            <div class="span4">
+                <umbraco:Macro Alias="LanguageSelector" runat="server" />
+            </div>
+            <div class="span4">
+                <umbraco:Macro Alias="SocialLinks" runat="server" />
+            </div>
+        </footer>
+    </div>
+    <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.2.min.js"></script>
+    <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+    <script src="//ajax.aspnetcdn.com/ajax/mvc/3.0/jquery.validate.unobtrusive.min.js"></script>
+    <%= Combres.WebExtensions.CombresLink("siteJs") %>
+</body>
+</html>

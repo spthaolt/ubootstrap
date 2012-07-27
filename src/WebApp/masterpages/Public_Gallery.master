@@ -1,0 +1,13 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/masterpages/Public.master" %>
+
+<asp:content ContentPlaceHolderId="HeaderContent" runat="server">
+    <h2><umbraco:Item field="headerText" stripParagraph="true" runat="server" /></h2>
+</asp:content>
+<asp:content ContentPlaceHolderId="MainContent" runat="server">
+    <umbraco:Macro Alias="Breadcrumb" runat="server" />
+    <umbraco:Macro Alias="ListPhotos" runat="server" />
+</asp:content>
+<asp:content ContentPlaceHolderID="SideContent" runat="server">
+    <umbraco:Macro Alias="RecommendWidget" runat="server" />
+    <umbraco:Macro Alias="ListThumbnails" runat="server" />
+</asp:content>
