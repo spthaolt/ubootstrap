@@ -59,6 +59,9 @@
     <Reference Include="Fasterflect">
       <HintPath>..\..\Lib\Combres\Fasterflect.dll</HintPath>
     </Reference>
+    <Reference Include="ImageResizer">
+      <HintPath>..\..\lib\ImageResizer\ImageResizer.dll</HintPath>
+    </Reference>
     <Reference Include="interfaces">
       <HintPath>..\..\Lib\Umbraco\interfaces.dll</HintPath>
       <Private>False</Private>
@@ -98,6 +101,7 @@
     <Compile Include="Actions\AddExamineIndexProvider.cs" />
     <Compile Include="Actions\AddExamineSearchProvider.cs" />
     <Compile Include="Actions\AddMediaItems.cs" />
+    <Compile Include="Actions\AddImageResizerSection.cs" />
     <Compile Include="Actions\RebuildIndex.cs" />
     <Compile Include="Actions\UpdateRoot.cs" />
     <Compile Include="UserControls\Installer.ascx.cs">

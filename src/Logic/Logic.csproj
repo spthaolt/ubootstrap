@@ -132,6 +132,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Modules\HeadersModule.cs" />
+    <Compile Include="Modules\ImageModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UI\MasterPageBase.cs">
       <SubType>ASPXCodeBehind</SubType>
