@@ -2,13 +2,15 @@
 @inherits DynamicNodeContext
 @{
     var root = @Model.AncestorOrSelf();
+    dynamic[] children = root.Children.ToArray();
     <ul class="nav">
     @{ var homeSelected = @Model.Level == 1 ? " class=\"active\"" : string.Empty; }
     <li@Html.Raw(homeSelected)><a href="@root.Url">@root.Name</a></li>
-    @foreach (var item in root.Children.Where("Visible"))
+    @foreach (var item in children.Where(x => x.UmbracoNaviHide != true))
     {
         var selected = Array.IndexOf(Model.Path.Split(','), item.Id.ToString()) >= 0 ? " class=\"active\"" : string.Empty;
-        var subItems = item.Descendants("Textpage").Where("Visible");
+        dynamic[] dynamicSubItems = item.Children.ToArray();
+        var subItems = dynamicSubItems.Where(x => x.NodeTypeAlias == "Textpage");
         if (subItems.Count() > 0)
         {
             <li class="dropdown">

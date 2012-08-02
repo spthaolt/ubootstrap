@@ -1,7 +1,8 @@
 @using umbraco.MacroEngines
 @inherits DynamicNodeContext
 @{
-    var pages = @Model.Parent.Descendants("Photo").Where("Id != " + @Model.Id).Take(3);
+	dynamic[] siblings = Model.Parent.Children.ToArray();
+    var pages = siblings.Where(x => x.NodeTypeAlias == "Photo" && x.Id != Model.Id).Take(3);
     <ul class="thumbnails">
     @foreach (var item in pages)
     {

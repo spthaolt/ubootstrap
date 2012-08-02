@@ -17,8 +17,6 @@
         dict.Add(Library.NodeById(@root.Id).Url, culture.TextInfo.ToTitleCase(culture.Parent.NativeName));
     }
     
-    if (dict.Count > 1)
-    {
     <ul class="nav nav-pills">
     <li><span>@Dictionary.Languages</span></li>
     @foreach (var item in dict)
@@ -26,6 +24,5 @@
         <li><a href="@item.Key">@item.Value</a></li>
     }
     </ul>
-    } 
 }
     

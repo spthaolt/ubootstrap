@@ -1,8 +1,8 @@
-@using umbraco.MacroEngines
+﻿@using umbraco.MacroEngines
 @inherits DynamicNodeContext
 @{
     <ul class="thumbnails">
-    @foreach (var item in @Model.Children)
+    @foreach (var item in Model.Children)
     {
         var image = RenderPage("ResizeImage.cshtml", item.BodyImage.ToString(), "260", "180", "", "ffffff");
         <li class="span3">

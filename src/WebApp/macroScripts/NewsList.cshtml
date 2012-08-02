@@ -2,8 +2,9 @@
 @inherits DynamicNodeContext
 @{
     const int maxNoChars = 100;
-    var events = @Model.Children.OrderBy("NewsDate desc");
-    foreach (var item in events)
+    dynamic[] children = Model.Children.ToArray();
+    var newsList = children.OrderByDescending(x => x.NewsDate);
+    foreach (var item in newsList)
     {
         <div class="well">
             <h4><a href="@item.Url">@item.Name</a></h4>

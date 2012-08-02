@@ -1,7 +1,7 @@
-@using umbraco.MacroEngines
+﻿@using umbraco.MacroEngines
 @inherits DynamicNodeContext
 @{
-    var root = Model.AncestorsOrSelf().First();
+    var root = Model.AncestorOrSelf();
     <div class="well">
         <dl>
             <dt><i class="icon-phone"></i> @Dictionary.Phone</dt>

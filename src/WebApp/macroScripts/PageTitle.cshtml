@@ -1,10 +1,11 @@
-@using umbraco.MacroEngines
+﻿@using umbraco.MacroEngines
 @inherits DynamicNodeContext
 @{
-    @Model.AncestorsOrSelf().First().SiteName
-    
+    dynamic[] ancestors = Model.AncestorsOrSelf().ToArray();
+    string[] names = ancestors.Where(x => x.UmbracoNaviHide != true && x.Level > 1).Select(x => x.Name).Cast<string>().ToArray();
+    @ancestors.First().SiteName
     if (@Model.Level > 1)
     {
-        @Html.Raw(" - ") @string.Join(" - ", @Model.AncestorsOrSelf().Where("Visible").Where("Level > 1").Pluck("Name"))
+        @Html.Raw(" - ") @string.Join(" - ", names)
     }
 }

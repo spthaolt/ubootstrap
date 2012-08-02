@@ -1,13 +1,14 @@
-@using System.Threading
+﻿@using System.Threading
 @using umbraco.MacroEngines
 @inherits DynamicNodeContext
 @{
-    IList<string> pages = @Model.Parent.Descendants("Photo").Pluck("Url");
-    string currentPage = @Model.Url;
+    dynamic[] sibilings = Model.Parent.Children.ToArray();
+    List<string> pages = sibilings.Where(x => x.NodeTypeAlias == "Photo").Select(x => x.Url).Cast<string>().ToList();
+    string currentPage = Model.Url;
     @Paging(pages, currentPage)
 }
 
-@helper Paging(IList<string> pages, string currentPage)
+@helper Paging(List<string> pages, string currentPage)
 {
     var totalPages = pages.Count();
     var currentPageNumber = pages.IndexOf(currentPage);

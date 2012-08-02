@@ -1,7 +1,9 @@
 ﻿@using umbraco.MacroEngines
 @inherits DynamicNodeContext
 @{
-    var subItems = @Model.AncestorOrSelf(2).Descendants("Textpage").Where("Visible");
+    var root = Model.AncestorOrSelf();
+    dynamic[] children = root.Children.ToArray();
+    var subItems = children.Where(x => x.NodeTypeAlias == "Textpage" && x.UmbracoNaviHide != false);
     <ul class="nav nav-tabs nav-stacked">
         @foreach (var item in subItems.Count() > 0 ? subItems : Model.AncestorOrSelf().Children.Where("Visible"))
         {

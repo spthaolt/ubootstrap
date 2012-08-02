@@ -1,11 +1,14 @@
 ﻿@using umbraco.MacroEngines
 @inherits DynamicNodeContext
 @{
-    var newsEvents = @Model.Descendants("Newslist").First();
+    var root = Model.AncestorOrSelf();
+    dynamic[] children = root.Children.ToArray();
+    var news = children.Where(x => x.NodeTypeAlias == "Newslist").First();
+    dynamic[] newsList = news.Children.ToArray();
     <div class="well">
-        <h3><a href="@newsEvents.Url">@newsEvents.Name</a></h3>
+        <h3><a href="@news.Url">@news.Name</a></h3>
         <ul class="unstyled">
-        @foreach (var item in newsEvents.Children.OrderBy("NewsDate desc").Take(3))
+        @foreach (var item in newsList.OrderByDescending(x => x.NewsDate).Take(3))
         {
             <li><span class="label">@item.NewsDate.ToString(@Dictionary.TimeFormat)</span> <a href="@item.Url">@item.Name</a></li>
         }

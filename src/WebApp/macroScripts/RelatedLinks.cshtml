@@ -1,7 +1,8 @@
-@using umbraco.MacroEngines
+﻿@using umbraco.MacroEngines
 @inherits DynamicNodeContext
 @{
-    var links = @Model.AncestorsOrSelf().First().FooterLinks.link;
+    var root = Model.AncestorOrSelf();
+    var links = root.FooterLinks.link;
     <ul class="nav nav-pills">
     <li><span>@Dictionary.RelatedLinks</span></li>
     @foreach (var item in links)
