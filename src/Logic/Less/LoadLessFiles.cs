@@ -34,7 +34,12 @@ namespace Bootstrap.Logic.Less
 
         public override void RenderJS(ref StringBuilder javascript)
         {
-            javascript.Append("\r\n\t\t\t\tfunction openConfigEditor(id) { parent.right.document.location.href = 'developer/Bootstrap/EditLessFile.aspx?file=' + id; }\r\n\t\t\t");
+            
+            javascript.Append(
+            @"
+                  function openLessEditor(id) { 
+                        parent.right.document.location.href = 'developer/Bootstrap/EditLessFile.aspx?file=' + id; 
+               }");
         }
 
         protected override void CreateRootNode(ref XmlTreeNode rootNode)
@@ -55,7 +60,7 @@ namespace Bootstrap.Logic.Less
 
         protected override void OnRenderFileNode(ref XmlTreeNode xNode)
         {
-            xNode.Action = xNode.Action.Replace("openFile", "openConfigEditor");
+            xNode.Action = xNode.Action.Replace("openFile", "openLessEditor");
             xNode.Menu = new List<IAction>();
             xNode.Icon = "../../images/umbraco/settingCss.gif";
             xNode.OpenIcon = xNode.Icon;
