@@ -39,77 +39,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="businesslogic">
-      <HintPath>..\..\lib\Umbraco\businesslogic.dll</HintPath>
-    </Reference>
-    <Reference Include="ClientDependency.Core, Version=1.5.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Umbraco\ClientDependency.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="cms">
-      <HintPath>..\..\lib\Umbraco\cms.dll</HintPath>
-    </Reference>
     <Reference Include="Combres, Version=2.2.2.6, Culture=neutral, PublicKeyToken=1ca6b37997dd7536, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Lib\Combres\Combres.dll</HintPath>
-    </Reference>
-    <Reference Include="controls">
-      <HintPath>..\..\lib\Umbraco\controls.dll</HintPath>
-    </Reference>
-    <Reference Include="CookComputing.XmlRpcV2, Version=2.5.0.0, Culture=neutral, PublicKeyToken=a7d6e17aa302004d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Umbraco\CookComputing.XmlRpcV2.dll</HintPath>
     </Reference>
     <Reference Include="dotless.Core, Version=1.3.0.2, Culture=neutral, PublicKeyToken=96b446c9e63eae34, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Lib\Combres\dotless.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Examine">
-      <HintPath>..\..\lib\Umbraco\Examine.dll</HintPath>
-    </Reference>
-    <Reference Include="HtmlAgilityPack, Version=1.4.5.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Umbraco\HtmlAgilityPack.dll</HintPath>
-    </Reference>
-    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Umbraco\ICSharpCode.SharpZipLib.dll</HintPath>
-    </Reference>
     <Reference Include="ImageResizer">
       <HintPath>..\..\Lib\ImageResizer\ImageResizer.dll</HintPath>
     </Reference>
-    <Reference Include="interfaces">
-      <HintPath>..\..\lib\Umbraco\interfaces.dll</HintPath>
-    </Reference>
-    <Reference Include="Lucene.Net, Version=2.9.4.1, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Umbraco\Lucene.Net.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ApplicationBlocks.Data, Version=1.0.1559.20655, Culture=neutral">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Umbraco\Microsoft.ApplicationBlocks.Data.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Web.Helpers">
-      <HintPath>..\..\lib\Umbraco\Microsoft.Web.Helpers.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Umbraco\Microsoft.Web.Infrastructure.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Our.Umbraco.uGoLive">
-      <HintPath>..\..\lib\Umbraco\Our.Umbraco.uGoLive.dll</HintPath>
-    </Reference>
-    <Reference Include="Our.Umbraco.uGoLive.47x">
-      <HintPath>..\..\lib\Umbraco\Our.Umbraco.uGoLive.47x.dll</HintPath>
-    </Reference>
-    <Reference Include="Our.Umbraco.uGoLive.Checks">
-      <HintPath>..\..\lib\Umbraco\Our.Umbraco.uGoLive.Checks.dll</HintPath>
-    </Reference>
-    <Reference Include="SQLCE4Umbraco">
-      <HintPath>..\..\lib\Umbraco\SQLCE4Umbraco.dll</HintPath>
-    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -145,40 +86,8 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="TidyNet, Version=1.0.0.0, Culture=neutral">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Umbraco\TidyNet.dll</HintPath>
-    </Reference>
-    <Reference Include="umbraco">
-      <HintPath>..\..\lib\Umbraco\umbraco.dll</HintPath>
-    </Reference>
-    <Reference Include="umbraco.DataLayer">
-      <HintPath>..\..\lib\Umbraco\umbraco.DataLayer.dll</HintPath>
-    </Reference>
-    <Reference Include="umbraco.editorControls">
-      <HintPath>..\..\lib\Umbraco\umbraco.editorControls.dll</HintPath>
-    </Reference>
     <Reference Include="umbraco.MacroEngines">
       <HintPath>..\..\lib\Umbraco\umbraco.MacroEngines.dll</HintPath>
-    </Reference>
-    <Reference Include="umbraco.macroRenderings">
-      <HintPath>..\..\lib\Umbraco\umbraco.macroRenderings.dll</HintPath>
-    </Reference>
-    <Reference Include="umbraco.providers, Version=1.0.4583.15476, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Umbraco\umbraco.providers.dll</HintPath>
-    </Reference>
-    <Reference Include="umbraco.webservices">
-      <HintPath>..\..\lib\Umbraco\umbraco.webservices.dll</HintPath>
-    </Reference>
-    <Reference Include="umbraco.XmlSerializers">
-      <HintPath>..\..\lib\Umbraco\umbraco.XmlSerializers.dll</HintPath>
-    </Reference>
-    <Reference Include="UmbracoExamine">
-      <HintPath>..\..\lib\Umbraco\UmbracoExamine.dll</HintPath>
-    </Reference>
-    <Reference Include="UrlRewritingNet.UrlRewriter">
-      <HintPath>..\..\lib\Umbraco\UrlRewritingNet.UrlRewriter.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -191,6 +100,7 @@
     <Content Include="css\rtl\theme.rtl.css" />
     <Content Include="css\bootstrap\theme.css" />
     <Content Include="css\font\font-awesome.css" />
+    <Content Include="default.aspx" />
     <Content Include="font\fontawesome-webfont.svg" />
     <Content Include="humans.txt" />
     <Content Include="ico\apple-touch-icon-114-precomposed.png" />
@@ -388,4 +298,31 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <PropertyGroup>
+    <PipelineCollectFilesPhaseDependsOn>
+      CopyUmbracoFiles;
+      $(PipelineCollectFilesPhaseDependsOn);
+    </PipelineCollectFilesPhaseDependsOn>
+  </PropertyGroup>
+  <Target Name="CopyUmbracoFiles">
+    <Message Text="Copy Umbraco Files" Importance="high" />
+    <ItemGroup>
+      <_CustomFiles Include="$(ProjectDir)\..\..\lib\Umbraco\**\*" />
+      <FilesForPackagingFromProject Include="%(_CustomFiles.Identity)">
+        <DestinationRelativePath>bin\%(RecursiveDir)%(Filename)%(Extension)</DestinationRelativePath>
+      </FilesForPackagingFromProject>
+    </ItemGroup>
+    <ItemGroup>
+      <_CustomFiles Include="$(ProjectDir)\umbraco\**\*" />
+      <FilesForPackagingFromProject Include="%(_CustomFiles.Identity)">
+        <DestinationRelativePath>umbraco\%(RecursiveDir)%(Filename)%(Extension)</DestinationRelativePath>
+      </FilesForPackagingFromProject>
+    </ItemGroup>
+    <ItemGroup>
+      <_CustomFiles Include="$(ProjectDir)\umbraco_client\**\*" />
+      <FilesForPackagingFromProject Include="%(_CustomFiles.Identity)">
+        <DestinationRelativePath>umbraco_client\%(RecursiveDir)%(Filename)%(Extension)</DestinationRelativePath>
+      </FilesForPackagingFromProject>
+    </ItemGroup>
+  </Target>
 </Project>
