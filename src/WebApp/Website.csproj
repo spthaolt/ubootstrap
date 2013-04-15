@@ -108,7 +108,7 @@
     <Content Include="ico\apple-touch-icon-57-precomposed.png" />
     <Content Include="ico\apple-touch-icon-72-precomposed.png" />
     <Content Include="ico\favicon.ico" />
-    <None Include="less\font\font-awesome.less" />
+    <Content Include="less\font\font-awesome.less" />
     <Content Include="less\bootstrap\theme.less" />
     <Content Include="masterpages\Public_Newspage.master" />
     <Content Include="robots.txt" />
@@ -322,6 +322,12 @@
       <_CustomFiles Include="$(ProjectDir)\umbraco_client\**\*" />
       <FilesForPackagingFromProject Include="%(_CustomFiles.Identity)">
         <DestinationRelativePath>umbraco_client\%(RecursiveDir)%(Filename)%(Extension)</DestinationRelativePath>
+      </FilesForPackagingFromProject>
+    </ItemGroup>
+    <ItemGroup>
+      <_CustomFiles Include="$(ProjectDir)\media\**\*" />
+      <FilesForPackagingFromProject Include="%(_CustomFiles.Identity)">
+        <DestinationRelativePath>media\%(RecursiveDir)%(Filename)%(Extension)</DestinationRelativePath>
       </FilesForPackagingFromProject>
     </ItemGroup>
   </Target>
