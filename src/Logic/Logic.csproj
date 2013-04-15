@@ -60,15 +60,9 @@
     <Reference Include="Fasterflect">
       <HintPath>..\..\Lib\Combres\Fasterflect.dll</HintPath>
     </Reference>
-    <Reference Include="imagegen">
-      <HintPath>..\Third Party\ImageGen\imagegen.dll</HintPath>
-    </Reference>
     <Reference Include="interfaces">
       <HintPath>..\..\Lib\Umbraco\interfaces.dll</HintPath>
       <Private>False</Private>
-    </Reference>
-    <Reference Include="log4net">
-      <HintPath>..\Third Party\Log4net\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -99,9 +93,6 @@
     <Reference Include="umbraco.editorControls">
       <HintPath>..\..\Lib\Umbraco\umbraco.editorControls.dll</HintPath>
       <Private>False</Private>
-    </Reference>
-    <Reference Include="umbraco.providers">
-      <HintPath>..\Third Party\Umbraco\umbraco.providers.dll</HintPath>
     </Reference>
     <Reference Include="UmbracoExamine">
       <HintPath>..\..\Lib\Umbraco\UmbracoExamine.dll</HintPath>
