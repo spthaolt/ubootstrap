@@ -42,10 +42,9 @@
     <Reference Include="businesslogic">
       <HintPath>..\..\lib\Umbraco\businesslogic.dll</HintPath>
     </Reference>
-    <Reference Include="ClientDependency.Core, Version=1.0.2.37148, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="ClientDependency.Core, Version=1.5.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Third Party\Umbraco\ClientDependency.Core.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\..\lib\Umbraco\ClientDependency.Core.dll</HintPath>
     </Reference>
     <Reference Include="cms">
       <HintPath>..\..\lib\Umbraco\cms.dll</HintPath>
