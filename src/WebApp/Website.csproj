@@ -298,6 +298,18 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <Target Name="AfterBuild">
+    <ItemGroup>
+      <umbracoLib Include="$(ProjectDir)..\..\lib\Umbraco\**\*" />
+      <umbracoFiles Include="$(ProjectDir)umbraco\**\*" />
+      <umbracoClientFiles Include="$(ProjectDir)umbraco_client\**\*" />
+      <media Include="$(ProjectDir)media\**\*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(umbracoLib)" DestinationFolder="$(OutDir)_PublishedWebsites\$(MSBuildProjectName)\bin" />
+    <Copy SourceFiles="@(umbracoFiles)" DestinationFolder="$(OutDir)_PublishedWebsites\$(MSBuildProjectName)\umbraco\%(RecursiveDir)" />
+    <Copy SourceFiles="@(umbracoClientFiles)" DestinationFolder="$(OutDir)_PublishedWebsites\$(MSBuildProjectName)\umbraco_client\%(RecursiveDir)" />
+    <Copy SourceFiles="@(media)" DestinationFolder="$(OutDir)_PublishedWebsites\$(MSBuildProjectName)\media\%(RecursiveDir)" />
+  </Target>
   <PropertyGroup>
     <PipelineCollectFilesPhaseDependsOn>
       CopyUmbracoFiles;
