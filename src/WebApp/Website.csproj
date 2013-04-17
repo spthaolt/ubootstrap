@@ -221,9 +221,9 @@
     <Content Include="config\applications.config" />
     <Content Include="config\feedProxy.config" />
     <Content Include="config\trees.config" />
-    <None Include="font\fontawesome-webfont.eot" />
-    <None Include="font\fontawesome-webfont.ttf" />
-    <None Include="font\fontawesome-webfont.woff" />
+    <Content Include="font\fontawesome-webfont.eot" />
+    <Content Include="font\fontawesome-webfont.ttf" />
+    <Content Include="font\fontawesome-webfont.woff" />
     <Content Include="less\bootstrap\accordion.less" />
     <Content Include="less\bootstrap\alerts.less" />
     <Content Include="less\bootstrap\bootstrap.less" />
