@@ -1,7 +1,6 @@
 ﻿using System.Web;
 using Bootstrap.Logic.Utils;
 using umbraco.businesslogic;
-using umbraco.cms.businesslogic;
 using umbraco.cms.businesslogic.web;
 
 namespace Bootstrap.Logic.Events
@@ -10,35 +9,19 @@ namespace Bootstrap.Logic.Events
     {
         public UpdateSitemap()
         {
-            Document.AfterPublish += OnAfterPublish;
-            Document.AfterUnPublish += OnAfterUnPublish;
-        }
-
-        private void OnAfterPublish(Document sender, PublishEventArgs e)
-        {
-            ClearSitemapCache(sender);
-        }
-
-        private void OnAfterUnPublish(Document sender, UnPublishEventArgs e)
-        {
-            ClearSitemapCache(sender);
+            Document.AfterPublish += (doc, e) => ClearSitemapCache(doc);
+            Document.AfterUnPublish += (doc, e) => ClearSitemapCache(doc);
         }
 
         private void ClearSitemapCache(Document sender)
         {
             var ids = sender.Path.Split(',');
-            if (ids.Length < 1)
-            {
-                return;
-            }
+            if (ids.Length < 1) return;
 
             var rootId = ids[1];
             var cacheName = string.Format(MainHelper.XmlSitemapCache, rootId);
             var cache = HttpRuntime.Cache[cacheName];
-            if (cache == null)
-            {
-                return;
-            }
+            if (cache == null) return;
 
             HttpRuntime.Cache.Remove(cacheName);
         }
