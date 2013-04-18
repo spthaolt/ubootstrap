@@ -15982,6 +15982,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="P:umbraco.loadMedia.StartNode">
+            <summary>
+            Returns the Media object of the starting node for the current User. This ensures
+            that the Media object is only instantiated once.
+            </summary>
+        </member>
         <member name="P:umbraco.loadMedia.StartNodeID">
             <summary>
             If the user is an admin, always return entire tree structure, otherwise
