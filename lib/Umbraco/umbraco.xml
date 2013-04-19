@@ -4,6 +4,11 @@
         <name>umbraco</name>
     </assembly>
     <members>
+        <member name="M:Umbraco.Web.UI.Controls.FolderBrowser.CreateChildControls">
+            <summary>
+            Create the native .net child controls for this control
+            </summary>
+        </member>
         <member name="T:umbraco.presentation.install.steps.detect">
             <summary>
             Database detection step in the installer wizard.
@@ -427,46 +432,6 @@
             This will remove all controls from being rendered and show a feedback control with an error
             </summary>
             <param name="msg"></param>
-        </member>
-        <member name="T:umbraco.presentation.config.splashes.booting">
-            <summary>
-            The booting page is used during Umbraco booting. The page will return a 500 http statuscode.
-            </summary>
-            <summary>
-            booting class.
-            </summary>
-            <remarks>
-            Auto-generated class.
-            </remarks>
-        </member>
-        <member name="M:umbraco.presentation.config.splashes.booting.Page_Load(System.Object,System.EventArgs)">
-            <summary>
-            Handles the Load event of the Page control, returns a 500 Statuscode during Umbraco boot.
-            </summary>
-            <param name="sender">The source of the event.</param>
-            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
-        </member>
-        <member name="T:umbraco.presentation.config.splashes.noNodes">
-            <summary>
-            noNodes page is used in case Umbraco doesn't contain any content nodes.
-            noNodes displays a standard error message to inform how to fix the problem.
-            </summary>
-        </member>
-        <member name="M:umbraco.presentation.config.splashes.noNodes.Page_Load(System.Object,System.EventArgs)">
-            <summary>
-            Handles the Load event of the Page control.
-            </summary>
-            <param name="sender">The source of the event.</param>
-            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
-        </member>
-        <member name="F:umbraco.presentation.config.splashes.noNodes.Form1">
-            <summary>
-            Form1 control.
-            </summary>
-            <remarks>
-            Auto-generated field.
-            To modify move field declaration from designer file to code-behind file.
-            </remarks>
         </member>
         <member name="T:umbraco.content">
             <summary>
@@ -2444,6 +2409,12 @@
             Class that encapsulates Umbraco information of a specific HTTP request.
             </summary>
         </member>
+        <member name="M:umbraco.presentation.UmbracoContext.#ctor(System.Web.HttpContextBase)">
+            <summary>
+            Creates a new Umbraco context.
+            </summary>
+            <param name="httpContext"></param>
+        </member>
         <member name="M:umbraco.presentation.UmbracoContext.#ctor(System.Web.HttpContext)">
             <summary>
             Creates a new Umbraco context.
@@ -2526,11 +2497,49 @@
             </summary>
             <param name="output"> The HTML writer to write out to </param>
         </member>
+        <member name="T:umbraco.presentation.UmbracoRequest">
+            <summary>
+            A custom HttpRequestBase object which exposes some additional methods
+            </summary>
+            <remarks>
+            The only reason this class exists is because somebody decided that it would be a good idea to piggy
+            back the IsDebug method on top of the HttpRequest object. Unforunately when this was created it 
+            inherited from HttpRequestWrapper intead of HttpRequestBase which meant that this is not unit testable
+            and still has a dependency on a real HttpRequest. So now it inherits from HttpRequestBase which 
+            means we need to override all of the methods and just wrap them with the _request object passed in.
+            
+            This now needs to exist only because of backwards compatibility
+            </remarks>
+        </member>
         <member name="P:umbraco.presentation.UmbracoRequest.IsDebug">
             <summary>
             Gets a value indicating whether the request has debugging enabled
             </summary>
             <value><c>true</c> if this instance is debug; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="T:umbraco.presentation.UmbracoResponse">
+            <summary>
+            A custom HttpResponseBase class
+            
+            The only reason this class exists is for backwards compatibility. Previously this used to 
+            inherit from HttpResponseWrapper which is incorrect since it is not unit testable and means that
+            it still has a reliance on the real HttpResponse object which means that the UmbracoContext still has 
+            a reliance on the real HttpContext.
+            </summary>
+        </member>
+        <member name="T:umbraco.presentation.UmbracoServerUtility">
+            <summary>
+            A custom HttpServerUtilityBase object which exposes some additional methods and also overrides
+            some such as MapPath to use the IOHelper.
+            </summary>
+            <remarks>
+            Unforunately when this class was created it 
+            inherited from HttpServerUtilityWrapper intead of HttpServerUtilityBase which meant that this is not unit testable
+            and still has a dependency on a real HttpRequest. So now it inherits from HttpRequestBase which 
+            means we need to override all of the methods and just wrap them with the _server object passed in.
+            
+            This now needs to exist only because of backwards compatibility
+            </remarks>
         </member>
         <member name="M:umbraco.presentation.UmbracoServerUtility.MapPath(System.String)">
             <summary>
@@ -2577,6 +2586,12 @@
             The umbEnsureUniqueName handler reacts on ActionNew() actions by default.
             </summary>
             <returns></returns>
+        </member>
+        <member name="T:umbraco.ActionHandlers.SimilarNodeNameComparer">
+            <summary>
+            Comparer that takes into account the duplicate index of a node name
+            This is needed as a normal alphabetic sort would go Page (1), Page (10), Page (2) etc.
+            </summary>
         </member>
         <member name="F:umbraco.presentation.actions.delete.Panel2">
             <summary>
@@ -9284,12 +9299,6 @@
             <summary>
             Summary description for insertTable.
             </summary>
-            <summary>
-            insertTable class.
-            </summary>
-            <remarks>
-            Auto-generated class.
-            </remarks>
         </member>
         <member name="M:umbraco.dialogs.insertTable.InitializeComponent">
             <summary>
@@ -13006,6 +13015,15 @@
             To modify move field declaration from designer file to code-behind file.
             </remarks>
         </member>
+        <member name="F:umbraco.presentation.plugins.tinymce3.insertLink.JsInclude5">
+            <summary>
+            JsInclude5 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
         <member name="F:umbraco.presentation.plugins.tinymce3.insertLink.pane_url">
             <summary>
             pane_url control.
@@ -15353,23 +15371,23 @@
             </summary>
             <param name="writer">The <see cref="T:System.Web.UI.HtmlTextWriter"/> object that receives the control content.</param>
         </member>
-        <member name="T:umbraco.presentation.umbraco.templateControls.Resources">
+        <member name="T:Umbraco.Web.umbraco.templateControls.Resources">
             <summary>
               A strongly-typed resource class, for looking up localized strings, etc.
             </summary>
         </member>
-        <member name="P:umbraco.presentation.umbraco.templateControls.Resources.ResourceManager">
+        <member name="P:Umbraco.Web.umbraco.templateControls.Resources.ResourceManager">
             <summary>
               Returns the cached ResourceManager instance used by this class.
             </summary>
         </member>
-        <member name="P:umbraco.presentation.umbraco.templateControls.Resources.Culture">
+        <member name="P:Umbraco.Web.umbraco.templateControls.Resources.Culture">
             <summary>
               Overrides the current thread's CurrentUICulture property for all
               resource lookups using this strongly typed resource class.
             </summary>
         </member>
-        <member name="P:umbraco.presentation.umbraco.templateControls.Resources.InlineXslt">
+        <member name="P:Umbraco.Web.umbraco.templateControls.Resources.InlineXslt">
              <summary>
                Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
             &lt;!DOCTYPE xsl:stylesheet [ &lt;!ENTITY nbsp &quot;&amp;#x00A0;&quot;&gt; ]&gt;
@@ -15981,12 +15999,6 @@
             actually has access to the root node.
             </summary>
             <returns></returns>
-        </member>
-        <member name="P:umbraco.loadMedia.StartNode">
-            <summary>
-            Returns the Media object of the starting node for the current User. This ensures
-            that the Media object is only instantiated once.
-            </summary>
         </member>
         <member name="P:umbraco.loadMedia.StartNodeID">
             <summary>
@@ -18443,6 +18455,13 @@
             <param name="nodeIndex">Index of the node.</param>
             <param name="parentId">The parent id.</param>
             <param name="parentNode">The parent node.</param>
+        </member>
+        <member name="M:umbraco.uQuery.GetContentIdByPropertyId(System.Int32)">
+            <summary>
+            Gets the <c>Content</c> Id by property Id.
+            </summary>
+            <param name="propertyId">The property id.</param>
+            <returns>Returns the <c>Content</c> Id.</returns>
         </member>
         <member name="M:umbraco.uQuery.GetAllDataTypes">
             <summary>
