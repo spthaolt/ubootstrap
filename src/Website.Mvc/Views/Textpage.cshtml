@@ -1,0 +1,20 @@
+﻿@using uBootStrapMvc.Site.Models
+@inherits UmbracoTemplatePage
+@{
+		Layout = "Base.cshtml";	
+}
+
+@Html.Partial("Breadcrumb")
+@Html.Partial("DisplayImage", new ImageModel { MediaId = CurrentPage.BodyImage, ImageWidth = 250, ImageClass = "rounded", FloatImage = true})
+@CurrentPage.BodyText
+
+@section Header
+{
+   <h2>@Umbraco.Field("headerText", removeParagraphTags : true)</h2>
+}
+
+@section Sidebar
+{
+    @Html.Partial("SideNavigation")
+    @Html.Partial("GetInTouch")
+}

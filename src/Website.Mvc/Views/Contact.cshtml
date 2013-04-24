@@ -1,0 +1,18 @@
+﻿@inherits UmbracoTemplatePage
+@{
+	Layout = "Base.cshtml";	
+}
+
+@Html.Partial("Breadcrumb")
+@Html.Action("RenderContactForm", "ContactFormSurface")
+
+
+@section Header
+{
+   <h2>@Umbraco.Field("headerText", removeParagraphTags : true)</h2>
+}
+
+@section Sidebar
+{
+    @Html.Partial("GetInTouch")
+}

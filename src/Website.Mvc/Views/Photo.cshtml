@@ -1,0 +1,31 @@
+﻿@using uBootStrapMvc.Site.Models
+@inherits UmbracoTemplatePage
+@{
+		Layout = "Base.cshtml";	
+}
+
+@Html.Partial("Breadcrumb")
+
+@{
+    // Create an image object
+    var image = new ImageModel
+    {
+        MediaId = CurrentPage.BodyImage,
+        ImageWidth = 860,
+        BgColor = "ffffff"
+    };
+}
+<a href="#" class="thumbnail">@Html.Partial("ResizeImage", image)</a>
+@Html.Partial("PhotoPager")
+
+@section Header
+{
+   <h2>@Umbraco.Field("headerText", removeParagraphTags : true)</h2>
+}
+
+@section Sidebar
+{
+    @*@Html.Partial("RecommendWidget")*@
+    
+    @Html.Partial("ListThumbnails")
+}

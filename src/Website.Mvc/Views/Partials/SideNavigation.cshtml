@@ -1,0 +1,16 @@
+@inherits UmbracoTemplatePage
+@{   
+    
+    // TODO:  Check with Jorge if this is outdated code.   Version from WebApp not working correctly
+    var root = Model.Content.AncestorOrSelf(2);
+    var subItems = root.Children.Where(x => x.DocumentTypeAlias == "Textpage" && x.IsVisible());
+    
+    <ul class="nav nav-tabs nav-stacked">
+        @foreach (var item in subItems )
+        {
+            var selected = Array.IndexOf(CurrentPage.Path.Split(','), item.Id.ToString()) >= 0 ? " class=\"active\"" : string.Empty;
+            <li @Html.Raw(selected)><a href="@item.Url">@item.Name</a></li>
+        }
+    </ul>
+    
+}

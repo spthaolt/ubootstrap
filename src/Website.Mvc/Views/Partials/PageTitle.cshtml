@@ -1,0 +1,16 @@
+@inherits UmbracoTemplatePage
+@{    
+    @CurrentPage.AncestorsOrSelf().First().SiteName
+    if (CurrentPage.Level > 1)
+    {
+        foreach (var name in CurrentPage.AncestorsOrSelf().Where("Visible").Where("Level > 1").Pluck("Name"))
+        {
+            @Html.Raw(" - ");
+            @name;
+        }
+    }    
+}
+
+
+
+

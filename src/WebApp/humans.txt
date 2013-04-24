@@ -4,6 +4,11 @@
 	Blog: http://jlusar.es
 	From: London
 
+	MVC Contrib: Barry Fogarty
+	Twitter: @barryfogarty
+	Blog: http://www.barryfogarty.com
+	Lives: Bath
+
 /* THANKS */
 	Eran Sharvit
 	Twitter: @thereturnvalue

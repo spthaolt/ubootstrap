@@ -2,6 +2,8 @@
 using System.Web.Routing;
 using Combres;
 
+using System.Web.Optimization;
+
 namespace Bootstrap.Logic.Global
 {
     public static class BootstrapPackage
@@ -15,6 +17,9 @@ namespace Bootstrap.Logic.Global
                 RouteTable.Routes.AddCombresRoute("Combres");
 
             }
+
+            //BundleConfig.RegisterBundles(BundleTable.Bundles);
+
         }
     }
 }

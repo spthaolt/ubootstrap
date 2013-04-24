@@ -1,0 +1,5 @@
+@using System.Threading
+@using System.Web.Optimization
+
+@(Thread.CurrentThread.CurrentUICulture.TextInfo.IsRightToLeft ? Styles.Render("~/bundles/theme.rtl") : Styles.Render("~/bundles/responsivetheme.less"))
+<!--[if lt IE 9]><script src="@Scripts.Url("~/bundles/html5shim")"></script><![endif]-->

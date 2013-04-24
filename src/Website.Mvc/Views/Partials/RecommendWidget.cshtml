@@ -1,0 +1,22 @@
+@using System.Threading
+@inherits UmbracoTemplatePage
+@{   
+    
+    // The <div id="fb-root"></div> must be set only once per page
+    bool disableFbRoot;
+    bool.TryParse((string)ViewData["disableFbRoot"], out disableFbRoot);
+    
+    <div class="well">
+    <div class="g-plusone" data-size="small" data-annotation="inline" data-width="200" data-href="@CurrentPage.Url" data-lang="@Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName"></div>
+    @if (!disableFbRoot) 
+    {
+        <div id="fb-root" data-lang="@Thread.CurrentThread.CurrentUICulture.Name.Replace("-", "_")"></div>
+    }
+    <div class="fb-like" data-href="@CurrentPage.Url" data-send="false" data-layout="button_count" data-width="200" data-show-faces="false" data-action="recommend" data-font="trebuchet ms"></div>
+    </div>
+    
+}
+
+
+
+

@@ -1,0 +1,19 @@
+@inherits UmbracoTemplatePage
+@{   
+    
+    var links = CurrentPage.AncestorsOrSelf().First().FooterLinks.link;
+    <ul class="nav nav-pills">
+        <li><span>@Umbraco.GetDictionaryValue("RelatedLinks")</span></li>
+        @foreach (var item in links)
+        {
+            var linkUrl = item.type == "internal" ? Umbraco.Content(item.link).Url : item.link;
+            var rel = item.type == "external" ? " rel=\"external\"" : string.Empty;
+            var title = item.title;
+            <li><a href="@linkUrl" @Html.Raw(rel)>@title</a></li>
+        }
+    </ul>
+    
+}
+
+
+

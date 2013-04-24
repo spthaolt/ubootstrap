@@ -168,13 +168,13 @@
 
         // Let's Replace the placeholders in the email message body
         var strEmailBody = new StringBuilder(Model.EmailBody.ToString());
-        strEmailBody.Replace("[Name]", strName); // Find and Replace [Name]
-        strEmailBody.Replace("[AddressLine1]", strAddressLine1); // Find and Replace [AddressLine1]
-        strEmailBody.Replace("[AddressLine2]", strAddressLine2); // Find and Replace [AddressLine2]
-        strEmailBody.Replace("[Email]", strEmailFrom); // Find and Replace [Email]
-        strEmailBody.Replace("[Message]", strMessage); // Find and Replace [Message]
-        strEmailBody.Replace("[Time]", strTime); // Find and Replace [Time]
-        strEmailBody.Replace("[Date]", strDate); // Find and Replace [Date]
+        strEmailBody.Replace("[Name]", strName);                    // Find and Replace [Name]
+        strEmailBody.Replace("[AddressLine1]", strAddressLine1);    // Find and Replace [AddressLine1]
+        strEmailBody.Replace("[AddressLine2]", strAddressLine2);    // Find and Replace [AddressLine2]
+        strEmailBody.Replace("[Email]", strEmailFrom);              // Find and Replace [Email]
+        strEmailBody.Replace("[Message]", strMessage);              // Find and Replace [Message]
+        strEmailBody.Replace("[Time]", strTime);                    // Find and Replace [Time]
+        strEmailBody.Replace("[Date]", strDate);                    // Find and Replace [Date]
 
         // Now the email is sent out to the owner, lets send out an email
         // to let the user know we have recieved their email & will respond shortly

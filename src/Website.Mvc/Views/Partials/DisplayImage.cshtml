@@ -1,0 +1,25 @@
+@using uBootStrapMvc.Site.Models
+
+@inherits UmbracoViewPage<ImageModel>   
+@{
+    int mediaId;
+    if (!int.TryParse(Model.MediaId, out mediaId))
+    {
+        return;
+    }
+    
+    if (Model.FloatImage)
+    {
+        <div class="floatImage">
+            @RenderPage("ResizeImage.cshtml", Model)
+        </div>
+    }
+    else
+    {
+        @RenderPage("ResizeImage.cshtml", Model)
+    }
+}
+
+
+
+

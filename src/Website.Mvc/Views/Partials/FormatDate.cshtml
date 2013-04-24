@@ -1,0 +1,24 @@
+@inherits UmbracoTemplatePage
+@{
+    var dateFormat = (string)ViewData["dateFormat"];
+    var propertyAlias = (string)ViewData["propertyAlias"];
+    DateTime result;
+    
+    if (!string.IsNullOrEmpty(propertyAlias) && CurrentPage.HasValue(propertyAlias))
+    {
+        if (!DateTime.TryParse(CurrentPage.GetPropertyValue(propertyAlias), out result))
+        {
+            result = DateTime.Parse(CurrentPage.CreateDate.ToString());
+        }
+    }
+    else
+    {
+        result = DateTime.Parse(CurrentPage.CreateDate.ToString());
+    }
+    
+    @result.ToString(dateFormat)
+}
+
+
+
+

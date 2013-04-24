@@ -1,0 +1,20 @@
+﻿@inherits UmbracoTemplatePage
+@{
+	Layout = "Base.cshtml";	
+}
+
+@Html.Partial("Breadcrumb")
+@Html.Partial("ListGalleries")
+
+
+@section Header
+{
+   <h2>@Umbraco.Field("bodyText", removeParagraphTags : true)</h2>
+}
+
+@section Sidebar
+{
+    @*@Html.Partial("RecommendWidget")*@
+    
+    @Html.Partial("GetInTouch")
+}

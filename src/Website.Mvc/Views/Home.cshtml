@@ -1,0 +1,32 @@
+﻿@using uBootStrapMvc.Site.Models
+@inherits UmbracoTemplatePage
+@{
+	Layout = "Base.cshtml";
+
+    // Create an image object to pass in to the DisplayImage PV as the model
+    var image = new ImageModel
+    {
+        MediaId = CurrentPage.BodyImage,
+        ImageWidth = 340
+    };
+}
+
+<div class="row">
+    <div class="span4">
+        @Html.Partial("DisplayImage", image)
+    </div>
+    <div class="span4">
+        @CurrentPage.bodyText
+    </div>
+</div>
+
+@section Header
+{
+   <h2>@Umbraco.Field("headerText")</h2>
+}
+
+@section Sidebar
+{
+    @Html.Partial("LatestNews")
+    @Html.Partial("GetInTouch")
+}

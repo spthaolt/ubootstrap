@@ -1,0 +1,64 @@
+@using uBootStrapMvc.Site.Controllers.SurfaceControllers
+@using uBootStrapMvc.Site.Models
+
+@* Inherit the custom model via UmbracoViewPage so we still have access to the Umbraco helper *@
+@inherits UmbracoViewPage<ContactFormModel>
+
+@Umbraco.Field("formText")
+@using (Html.BeginUmbracoForm<ContactFormSurfaceController>("HandleContactForm", FormMethod.Post, new { @class = "form-horizontal validate" }))
+{
+    @Html.ValidationSummary(true)
+    
+    <fieldset>
+        <legend>@Umbraco.GetDictionaryValue("FormLegend")</legend>
+
+        <!-- Name -->
+        <div class="control-group">
+            @Html.LabelFor(model => model.Name, new { @class = "control-label" })
+            <div class="controls">
+                @Html.TextBoxFor(model => model.Name, new { @class = "input-xlarge" })
+                @Html.ValidationMessageFor(model => model.Name, null, new { @class = "help-inline" })
+            </div>
+        </div>
+        
+        <!-- Address 1 -->
+        <div class="control-group">
+            @Html.LabelFor(model => model.Address1, new { @class = "control-label" })
+            <div class="controls">
+                @Html.TextBoxFor(model => model.Address1, new { @class = "input-xlarge" })
+                @Html.ValidationMessageFor(model => model.Address1)
+            </div>
+        </div>
+
+        <!-- Address 2 -->
+        <div class="control-group">
+            @Html.LabelFor(model => model.Address2, new { @class = "control-label" })
+            <div class="controls">
+                @Html.TextBoxFor(model => model.Address2, new { @class = "input-xlarge" })
+                @Html.ValidationMessageFor(model => model.Address2)
+            </div>
+        </div>
+        
+        <!-- Email Address -->
+        <div class="control-group">
+            @Html.LabelFor(model => model.Email, new { @class = "control-label" })
+            <div class="controls">
+                @Html.TextBoxFor(model => model.Email, new { @class = "input-xlarge" })
+                @Html.ValidationMessageFor(model => model.Email, null, new { @class = "help-inline" })
+            </div>
+        </div>
+        
+        <!-- Message -->
+        <div class="control-group">
+            @Html.LabelFor(model => model.Message, new { @class = "control-label" })
+            <div class="controls">
+                @Html.TextAreaFor(model => model.Message, new { cols = 25, rows = 5, @class = "input-xlarge" })
+                @Html.ValidationMessageFor(model => model.Message, null, new { @class = "help-inline" })
+            </div>
+        </div>
+        
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">@Umbraco.GetDictionaryValue("Send")</button>
+        </div>                @* Add the anti forgery token to guard against CSRF and XSS attacks *@        @Html.AntiForgeryToken()
+    </fieldset>
+}

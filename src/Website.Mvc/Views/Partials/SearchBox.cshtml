@@ -1,0 +1,7 @@
+@inherits UmbracoTemplatePage
+@{
+    var searchPage = CurrentPage.AncestorsOrSelf().First().Descendants("Searchpage").First();
+    <form role="search" method="get" action="@searchPage.Url" class="navbar-form pull-right">
+        <input type="text" name="q" class="span2" value="@Request.QueryString["q"]" placeholder="@Umbraco.GetDictionaryValue("Search")" />
+    </form>
+}

@@ -1,0 +1,20 @@
+@inherits UmbracoTemplatePage
+@{   
+    
+    var root = CurrentPage.AncestorsOrSelf().First();
+    <div class="well">
+        <dl>
+            <dt><i class="icon-phone"></i> @Umbraco.GetDictionaryValue("Phone")</dt>
+            <dd>@root.ContactPhone</dd>
+        </dl>
+        <dl>
+            <dt><i class="icon-envelope"></i> @Umbraco.GetDictionaryValue("Email")</dt>
+            <dd>@root.ContactEmail</dd>
+        </dl>
+    </div>
+    
+}
+
+
+
+

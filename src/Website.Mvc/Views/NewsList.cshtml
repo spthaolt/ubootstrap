@@ -1,0 +1,22 @@
+﻿@inherits UmbracoTemplatePage
+@{
+	Layout = "Base.cshtml";	
+}
+
+@Html.Partial("Breadcrumb")
+@Html.Partial("NewsList")
+
+
+@section Header
+{
+   <h2>@Umbraco.Field("bodyText", removeParagraphTags : true)</h2>
+}
+
+@section Sidebar
+{
+    <div class="well">
+        <ul class="unstyled" id="twtr-widget" data-user="@Umbraco.Field("twitterAccount", recursive : true)">
+            <li></li>
+        </ul>
+    </div>
+}

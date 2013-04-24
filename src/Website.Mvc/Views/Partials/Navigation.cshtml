@@ -1,0 +1,34 @@
+@inherits UmbracoTemplatePage
+@{
+    var root = CurrentPage.AncestorOrSelf();
+    <ul class="nav">
+    @{ var homeSelected = CurrentPage.Level == 1 ? " class=\"active\"" : string.Empty; }
+    <li @Html.Raw(homeSelected)><a href="@root.Url">@root.Name</a></li>
+    @foreach (var item in root.Children.Where("Visible"))
+    {
+        var selected = Array.IndexOf(CurrentPage.Path.Split(','), item.Id.ToString()) >= 0 ? " class=\"active\"" : string.Empty;
+        var subItems = item.Descendants("Textpage").Where("Visible");
+        if (subItems.Count() > 0)
+        {
+            <li class="dropdown">
+            <a href="@item.Url" class="dropdown-toggle" data-toggle="dropdown">@item.Name</a>
+            <ul class="dropdown-menu">
+            @foreach (var subItem in subItems)
+            {
+                <li><a href="@subItem.Url">@subItem.Name</a></li>
+            }
+            </ul>
+            </li>
+        }
+        else
+        {
+            <li @Html.Raw(selected)><a href="@item.Url">@item.Name</a></li>
+        }
+    }
+    </ul>
+}
+
+
+
+
+

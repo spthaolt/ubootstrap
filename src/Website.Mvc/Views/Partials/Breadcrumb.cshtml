@@ -1,0 +1,17 @@
+@inherits UmbracoTemplatePage
+@{   
+    
+    <ul class="breadcrumb">
+    @foreach (var level in CurrentPage.Ancestors().Where("Visible"))
+    {
+        <li><a href="@level.Url">@level.Name</a> <span class="divider">/</span></li>
+    }
+
+        <li class="active">@CurrentPage.Name</li>
+    </ul>
+    
+}
+
+
+
+

@@ -14,12 +14,16 @@
     <RootNamespace>Bootstrap.Website</RootNamespace>
     <AssemblyName>Bootstrap.Website</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -39,6 +43,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="businesslogic">
+      <HintPath>..\..\lib\Umbraco\businesslogic.dll</HintPath>
+    </Reference>
     <Reference Include="ClientDependency.Core, Version=1.0.2.37148, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Third Party\Umbraco\ClientDependency.Core.dll</HintPath>
@@ -48,10 +55,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Lib\Combres\Combres.dll</HintPath>
     </Reference>
-    <Reference Include="controls, Version=1.0.4281.14853, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Third Party\Umbraco\controls.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="controls">
+      <HintPath>..\..\lib\Umbraco\controls.dll</HintPath>
     </Reference>
     <Reference Include="dotless.Core, Version=1.3.0.2, Culture=neutral, PublicKeyToken=96b446c9e63eae34, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -60,14 +65,11 @@
     <Reference Include="ImageResizer">
       <HintPath>..\..\Lib\ImageResizer\ImageResizer.dll</HintPath>
     </Reference>
-    <Reference Include="interfaces, Version=1.0.4266.19106, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Third Party\Umbraco\interfaces.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="interfaces">
+      <HintPath>..\..\lib\Umbraco\interfaces.dll</HintPath>
     </Reference>
-    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Third Party\Log4net\log4net.dll</HintPath>
+    <Reference Include="log4net">
+      <HintPath>..\..\lib\Log4net\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
@@ -85,15 +87,14 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="umbraco, Version=1.0.4281.20201, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Third Party\Umbraco\umbraco.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="umbraco">
+      <HintPath>..\..\lib\Umbraco\umbraco.dll</HintPath>
     </Reference>
-    <Reference Include="umbraco.editorControls, Version=1.0.4281.20203, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Third Party\Umbraco\umbraco.editorControls.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="umbraco.editorControls">
+      <HintPath>..\..\lib\Umbraco\umbraco.editorControls.dll</HintPath>
+    </Reference>
+    <Reference Include="UrlRewritingNet.UrlRewriter">
+      <HintPath>..\..\lib\Umbraco\UrlRewritingNet.UrlRewriter.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -159,7 +160,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Logic\Logic.csproj">
       <Project>{A008E7F5-686C-4B78-9B01-44F181B8CC93}</Project>
-      <Name>Bootstrap Logic</Name>
+      <Name>Logic</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -222,7 +223,9 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="masterpages\XmlSitemap.master" />
-    <Content Include="config\Combres.config" />
+    <Content Include="config\Combres.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="config\applications.config" />
     <Content Include="config\feedProxy.config" />
     <Content Include="config\trees.config" />
@@ -281,12 +284,11 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>False</UseIIS>
+          <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>1044</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>
-          </IISUrl>
+          <IISUrl>http://ubootstrap.local</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

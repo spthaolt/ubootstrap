@@ -1,0 +1,26 @@
+@using uBootStrapMvc.Site.Models
+@inherits UmbracoTemplatePage
+@{
+    var pages = CurrentPage.Parent.Descendants("Photo").Where("Id != " + CurrentPage.Id).Take(3);
+    <ul class="thumbnails">
+    @foreach (var item in pages)
+    {
+        var image = new ImageModel { 
+                                        MediaId = item.BodyImage,
+                                        ImageWidth = 260,
+                                        ImageHeight = 180, 
+                                        ImageClass = "", 
+                                        BgColor = "ffffff", 
+                                        AltText = "Here is some custom alt text" 
+                                    };
+
+        <li class="span3">
+            <a href="@item.Url" title="@item.HeaderText" class="thumbnail">@Html.Partial("ResizeImage", image)</a>
+        </li>
+    }
+    </ul>
+}
+
+
+
+

@@ -1,0 +1,79 @@
+@using System.Collections.Specialized
+@using Bootstrap.Logic.Utils
+@using uBootStrapMvc.Site.Models
+
+@inherits UmbracoViewPage<ImageModel>
+@{   
+    
+    int mediaId;
+    if (!int.TryParse(Model.MediaId, out mediaId))
+    {
+        return;
+    }
+    
+    var nvc = new NameValueCollection();
+    var media = Umbraco.Media(mediaId);
+    if (media == null || media.DocumentTypeAlias != "Image")
+    {
+        return;
+    }
+        
+    string mediaPath = media.Url;
+    if (string.IsNullOrEmpty(mediaPath))
+    {
+        return;
+    }
+    
+    int mediaWidth =  int.Parse(media.GetPropertyValue("umbracoWidth"));
+    int mediaHeight = int.Parse(media.GetPropertyValue("umbracoHeight"));
+    int newWidth = Model.ImageWidth > 0 ? Model.ImageWidth : mediaWidth;
+    int newHeight = newWidth * mediaHeight / mediaWidth;
+    int maxHeight = Model.ImageHeight;
+    if (maxHeight > 0)
+    {
+        
+        if (Model.Constrain)
+        {
+            nvc.Add("constrain", "true");
+            if (newHeight > maxHeight)
+            {
+                newWidth = maxHeight * mediaWidth / mediaHeight;
+                newHeight = maxHeight;
+            }
+        }
+        else
+        {
+            nvc.Add("constrain", "false");
+            newHeight = maxHeight;
+        }
+            
+        if(!string.IsNullOrEmpty(PageData[4]))
+        {
+            // Ignore constrain 
+            newWidth = int.Parse(PageData[1]);
+            newHeight = int.Parse(PageData[2]);
+            nvc.Remove("constrain");
+            nvc.Add("pad", "true");
+            nvc.Add("bgcolor", PageData[4]);                
+        }
+
+        nvc.Add("width", newWidth.ToString());
+        nvc.Add("height", newHeight.ToString());
+    }
+    else
+    {
+        nvc.Add("width", newWidth.ToString());
+    }
+        
+    var query = nvc.ConstructQueryString();
+
+    string mediaName = Umbraco.Coalesce(Model.AltText, media.Name);
+    string imageClass = !string.IsNullOrEmpty(Model.ImageClass) ? string.Format(" class=\"{0}\"", Model.ImageClass) : string.Empty;
+    
+    <img src="@mediaPath?@query" width="@newWidth" height="@newHeight" alt="@mediaName"@Html.Raw(imageClass) />
+
+}
+
+
+
+

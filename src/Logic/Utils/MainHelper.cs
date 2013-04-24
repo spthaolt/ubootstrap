@@ -44,11 +44,11 @@ namespace Bootstrap.Logic.Utils
                         message.AlternateViews.Add(plainTextView);
 
                         // Define the html alternate view and add to message
-                        string htmlBodyTemplate = "<!doctype html>" +
-                                          "<html lang=\"{0}\">" +
-                                          "<head><meta charset=\"utf-8\"/><title>{1}</title></head>" +
-                                          "<body{2}>{3}</body>" +
-                                          "</html>";
+                        const string htmlBodyTemplate = "<!doctype html>" +
+                                                        "<html lang=\"{0}\">" +
+                                                        "<head><meta charset=\"utf-8\"/><title>{1}</title></head>" +
+                                                        "<body{2}>{3}</body>" +
+                                                        "</html>";
                         string htmlBody = string.Format(htmlBodyTemplate, 
                                                         ci.TwoLetterISOLanguageName, 
                                                         subject,
@@ -132,5 +132,6 @@ namespace Bootstrap.Logic.Utils
         {
             return String.IsNullOrWhiteSpace(value);
         }
+
     }
 }
