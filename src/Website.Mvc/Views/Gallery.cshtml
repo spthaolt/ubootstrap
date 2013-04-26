@@ -9,12 +9,10 @@
 
 @section Header
 {
-   <h2>@Umbraco.Field("bodyText", removeParagraphTags : true)</h2>
+   <h2>@Umbraco.Field("headerText", removeParagraphTags : true)</h2>
 }
 
 @section Sidebar
 {
-    @*@Html.Partial("RecommendWidget")*@
-    
-    @Html.Partial("ListThumbnails")
+    @Html.Partial("RecommendWidget")
 }

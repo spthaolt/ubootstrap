@@ -1,3 +1,0 @@
-﻿<%@ Master Language="C#" %>
-
-<umbraco:Macro Alias="XmlSitemap" runat="server" />

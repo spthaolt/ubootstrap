@@ -1,4 +1,4 @@
-﻿namespace uBootStrapMvc.Site.Models
+﻿namespace Website.Mvc.Models
 {
     public class ImageModel
     {

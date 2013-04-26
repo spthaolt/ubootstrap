@@ -2,12 +2,10 @@
 
 @inherits UmbracoTemplatePage
 @{
-		Layout = "Base.cshtml";	
+	Layout = "Base.cshtml";	
 }
 
-@Html.Partial("Breadcrumb")
-@Html.Partial("DisplayImage", new ImageModel { MediaId = CurrentPage.BodyImage, ImageWidth = 250, ImageClass = "rounded", FloatImage = true})
-@CurrentPage.BodyText
+@Html.Partial("SearchResults")
 
 @section Header
 {

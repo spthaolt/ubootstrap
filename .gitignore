@@ -6,6 +6,14 @@ src/WebApp/aspnet_client/
 src/WebApp/media/created-packages/
 src/WebApp/media/*/Cached/
 
+# Umbraco
+src/Website.Mvc/App_Browsers/
+src/Website.Mvc/App_Code/
+src/Website.Mvc/App_Data/
+src/Website.Mvc/aspnet_client/
+src/Website.Mvc/media/created-packages/
+src/Website.Mvc/media/*/Cached/
+
 # Visual Studio
 [Oo]bj
 [Bb]in

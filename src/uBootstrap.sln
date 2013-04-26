@@ -1,15 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Website", "WebApp\Website.csproj", "{643DDA66-5AB4-4E45-B505-568A729455AD}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic", "Logic\Logic.csproj", "{A008E7F5-686C-4B78-9B01-44F181B8CC93}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{66A7F17E-96A6-427E-9F13-C9BE40347DA9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Installer", "Installer\Installer.csproj", "{10C6C8F0-015E-43FF-A74E-12624A63E17B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Site", "Website.Mvc\Site.csproj", "{61FFC058-A14B-43E0-AF09-6B486B4425FA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Website.Mvc", "Website.Mvc\Website.Mvc.csproj", "{61FFC058-A14B-43E0-AF09-6B486B4425FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{643DDA66-5AB4-4E45-B505-568A729455AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{643DDA66-5AB4-4E45-B505-568A729455AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{643DDA66-5AB4-4E45-B505-568A729455AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{643DDA66-5AB4-4E45-B505-568A729455AD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A008E7F5-686C-4B78-9B01-44F181B8CC93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A008E7F5-686C-4B78-9B01-44F181B8CC93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A008E7F5-686C-4B78-9B01-44F181B8CC93}.Release|Any CPU.ActiveCfg = Release|Any CPU

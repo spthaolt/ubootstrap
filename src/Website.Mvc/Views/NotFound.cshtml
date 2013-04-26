@@ -1,18 +1,23 @@
-﻿@using Website.Mvc.Models
+﻿@using System.Threading
+@using Website.Mvc.Models
 
 @inherits UmbracoTemplatePage
 @{
 	Layout = "Base.cshtml";	
 }
 
-@Html.Partial("Breadcrumb")
-@Umbraco.Field("newsDate", altFieldAlias: "createDate", formatAsDate: true)
 @Html.Partial("DisplayImage", new ImageModel { MediaId = CurrentPage.BodyImage, ImageWidth = 250, ImageClass = "rounded", FloatImage = true})
 @Umbraco.Field("bodyText", removeParagraphTags : true)
 
+<script>
+    var GOOG_FIXURL_LANG = '@Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName';
+    var GOOG_FIXURL_SITE = location.host;
+</script>
+<script src="http://linkhelp.clients.google.com/tbproxy/lh/wm/fixurl.js"></script>
+
 @section Header
 {
-   <h2>@Umbraco.Field("pageName")</h2>
+   <h2>@Umbraco.Field("headerText", removeParagraphTags : true)</h2>
 }
 
 @section Sidebar

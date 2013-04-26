@@ -1,27 +1,24 @@
-@using uBootStrapMvc.Site.Models
+@using Website.Mvc.Models
+
 @inherits UmbracoTemplatePage
 @{   
     
     <ul class="thumbnails">
     @foreach (var item in CurrentPage.Children)
     {
-        //var image = RenderPage("ResizeImage.cshtml", item.GalleryThumbnail.ToString(), "260", "180", "", "ffffff");
-        
         var image = new ImageModel { 
-                                        MediaId = item.GalleryThumbnail,
-                                        ImageWidth = 260,
-                                        ImageHeight = 180, 
-                                        ImageClass = "", 
-                                        BgColor = "ffffff", 
-                                        AltText = "Here is some custom alt text - replace with item" 
-                                    };
+                            MediaId = item.GalleryThumbnail,
+                            ImageWidth = 260,
+                            ImageHeight = 180, 
+                            ImageClass = "", 
+                            BgColor = "ffffff", 
+                            AltText = "Here is some custom alt text - replace with item" 
+                        };
 
-        @Html.Partial("ResizeImage", image)
-        
         var count = item.Children.Count();
         var photoText = string.Format("{0} ({1} {2}{3})", item.Name, count, @Umbraco.GetDictionaryValue("Photo"), count > 1 ? "s" : string.Empty);
         <li class="span3">
-            <a href="@item.Url" title="@photoText" class="thumbnail">@image</a>
+            <a href="@item.Url" title="@photoText" class="thumbnail">@Html.Partial("ResizeImage", image)</a>
         </li>
     }
     </ul>

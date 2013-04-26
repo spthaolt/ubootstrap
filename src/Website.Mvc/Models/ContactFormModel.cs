@@ -1,8 +1,6 @@
 using System.ComponentModel.DataAnnotations;
-using Umbraco.Web;
-using Umbraco.Web.Mvc;
 
-namespace uBootStrapMvc.Site.Models
+namespace Website.Mvc.Models
 { 
 	public class ContactFormModel
 	{

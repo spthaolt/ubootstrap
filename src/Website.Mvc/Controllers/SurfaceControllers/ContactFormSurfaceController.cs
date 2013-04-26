@@ -1,17 +1,13 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading;
-using System.Web;
-
 using System.Web.Mvc;
+
 using Bootstrap.Logic.Utils;
 using Umbraco.Web.Mvc;
-using uBootStrapMvc.Site.Models;
+using Website.Mvc.Models;
 
-
-namespace uBootStrapMvc.Site.Controllers.SurfaceControllers
+namespace Website.Mvc.Controllers.SurfaceControllers
 {
     public class ContactFormSurfaceController : SurfaceController
     {
