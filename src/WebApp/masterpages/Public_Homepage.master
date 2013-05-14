@@ -6,6 +6,7 @@
 <asp:content ContentPlaceHolderId="MainContent" runat="server">
     <div class="row">
         <div class="span4">
+        <h4> Hello Umblondon</h4>
             <umbraco:Macro Alias="DisplayImage" MediaId="[#bodyImage]" ImageWidth="340" runat="server" />
         </div>
         <div class="span4">
