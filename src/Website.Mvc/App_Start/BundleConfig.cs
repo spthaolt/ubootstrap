@@ -2,8 +2,11 @@
 using BundleTransformer.Core.Orderers;
 using BundleTransformer.Core.Transformers;
 
-namespace uBootStrapMvc.Site.App_Start
+namespace Website.Mvc.App_Start
 {
+    using System.Collections.Generic;
+    using System.IO;
+
     public class BundleConfig
     {
         public static void RegisterBundles(BundleCollection bundles)
@@ -13,6 +16,7 @@ namespace uBootStrapMvc.Site.App_Start
             var nullOrderer = new NullOrderer();
             
             // Default theme CSS bundle - This bundle can be used if user does not want to bother with LESS
+            // TODO: Check if files exist before adding to bundle!
             bundles.Add(new StyleBundle("~/bundles/theme.css").Include(
                 "~/css/bootstrap/bootstrap.css",                   // Standard bootstrap css
                 "~/css/font/font-awesome.css",                     // Standard font-awesome css
@@ -105,6 +109,18 @@ namespace uBootStrapMvc.Site.App_Start
             // BundleTable.EnableOptimizations = true;
 
 
+        }
+
+        //TODO: FilesExist method to return a list of filename strings for Bundles
+        private static IEnumerable<string> FilesExist(IEnumerable<string> files)
+        {
+            var retVal = new List<string>();
+            foreach (var item in files)
+            {
+                if (File.Exists(item)) retVal.Add(item);
+            }
+
+            return retVal;
         }
     }
 }

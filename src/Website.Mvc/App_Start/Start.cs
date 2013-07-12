@@ -1,7 +1,7 @@
 ﻿using System.Web.Optimization;
 using Umbraco.Core;
 
-namespace uBootStrapMvc.Site.App_Start
+namespace Website.Mvc.App_Start
 {
     public class MvcStartup : IApplicationEventHandler
     {

@@ -39,16 +39,9 @@
       <HintPath>..\..\Lib\Umbraco\cms.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Combres">
-      <HintPath>..\..\Lib\Combres\Combres.dll</HintPath>
-    </Reference>
     <Reference Include="controls">
       <HintPath>..\..\Lib\Umbraco\controls.dll</HintPath>
       <Private>False</Private>
-    </Reference>
-    <Reference Include="dotless.Core, Version=1.3.0.2, Culture=neutral, PublicKeyToken=96b446c9e63eae34, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Lib\Combres\dotless.Core.dll</HintPath>
     </Reference>
     <Reference Include="EcmaScript.NET.modified">
       <HintPath>..\..\Lib\Combres\EcmaScript.NET.modified.dll</HintPath>
@@ -60,15 +53,9 @@
     <Reference Include="Fasterflect">
       <HintPath>..\..\Lib\Combres\Fasterflect.dll</HintPath>
     </Reference>
-    <Reference Include="imagegen">
-      <HintPath>..\Third Party\ImageGen\imagegen.dll</HintPath>
-    </Reference>
     <Reference Include="interfaces">
       <HintPath>..\..\Lib\Umbraco\interfaces.dll</HintPath>
       <Private>False</Private>
-    </Reference>
-    <Reference Include="log4net">
-      <HintPath>..\Third Party\Log4net\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -103,18 +90,13 @@
       <HintPath>..\..\Lib\Umbraco\umbraco.editorControls.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="umbraco.providers">
-      <HintPath>..\Third Party\Umbraco\umbraco.providers.dll</HintPath>
-    </Reference>
     <Reference Include="UmbracoExamine">
       <HintPath>..\..\Lib\Umbraco\UmbracoExamine.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="WebActivator">
-      <HintPath>..\..\Lib\WebActivator\WebActivator.dll</HintPath>
-    </Reference>
-    <Reference Include="Yahoo.Yui.Compressor">
-      <HintPath>..\..\Lib\Combres\Yahoo.Yui.Compressor.dll</HintPath>
+    <Reference Include="WebActivator, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Projects\_Contrib\ubootstrap\lib\WebActivator\WebActivator.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

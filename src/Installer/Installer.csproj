@@ -42,15 +42,9 @@
       <HintPath>..\..\Lib\Umbraco\cms.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Combres">
-      <HintPath>..\..\Lib\Combres\Combres.dll</HintPath>
-    </Reference>
     <Reference Include="controls">
       <HintPath>..\..\Lib\Umbraco\controls.dll</HintPath>
       <Private>False</Private>
-    </Reference>
-    <Reference Include="dotless.Core">
-      <HintPath>..\..\Lib\Combres\dotless.Core.dll</HintPath>
     </Reference>
     <Reference Include="EcmaScript.NET.modified">
       <HintPath>..\..\Lib\Combres\EcmaScript.NET.modified.dll</HintPath>
@@ -94,12 +88,8 @@
       <HintPath>..\..\Lib\Umbraco\umbraco.DataLayer.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Yahoo.Yui.Compressor">
-      <HintPath>..\..\Lib\Combres\Yahoo.Yui.Compressor.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Actions\AddCombresSection.cs" />
     <Compile Include="Actions\AddExamineIndex.cs" />
     <Compile Include="Actions\AddExamineIndexProvider.cs" />
     <Compile Include="Actions\AddExamineSearchProvider.cs" />
